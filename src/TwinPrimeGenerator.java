@@ -6,12 +6,58 @@
  * should find the smallest set of twin primes both in the given range and then return the 
  * larger of the two. 
  * The HashtableExperiment class will call generateTwinPrime(95500, 96000) to get an appropriate 
- * twin prime for the experiment. This allows us to all use the same table size and be able to 
+ * twin prime for the experiment. (95991, 95993) This allows us to all use the same table size and be able to 
  * compare some of the results.
  * 
  * @author Christopher Smith
  * */
 
 public class TwinPrimeGenerator {
- //TODO generate twin primes
+
+	//Walk through min:max until first twin primes are found and return larger of the two
+	public static int generateTwinPrime(int min, int max) {
+		int first, second;
+		
+		for (int i = min; i <= max; i++) {
+			first = i;
+			second = i + 2;
+			if(checkForPrime(first) && checkForPrime(second))
+	        {
+				System.out.println("HashtableExperiment: Found a twin prime table capacity: " + second); 
+	            return second;
+	        }
+		}
+		System.out.println("No prime in range");
+		return 0;
+	}
+	
+	// Helper method to check if something is prime
+	static boolean checkForPrime(int inputNumber)
+	    {
+	        boolean isItPrime = true;
+	         
+	        if(inputNumber <= 1) 
+	        {
+	            isItPrime = false;
+	             
+	            return isItPrime;
+	        }
+	        else
+	        {
+	            for (int i = 2; i <= inputNumber/2; i++) 
+	            {
+	                if ((inputNumber % i) == 0)
+	                {
+	                    isItPrime = false;
+	                     
+	                    break;
+	                }
+	            }
+	             
+	            return isItPrime;
+	        }
+	    }
+	
+
 }
+	
