@@ -6,7 +6,10 @@
 
 ## Overview
 
-This project is to implement a Hashtable class with open addressing and study how the load factor affects the average number of probes required for linear probing versus double hashing for various types of inputs. It inserts n HashObject objects into a specific hash table of size m until we get a load factor α defined as n/m.
+This project is to implement a Hashtable class with open addressing and study how the load factor 
+affects the average number of probes required for linear probing versus double hashing for various 
+types of inputs. It inserts n HashObject objects into a specific hash table of size m until we get a 
+load factor α defined as n/m.
 
 ## Reflection
 
@@ -16,23 +19,34 @@ Did you run into an issue that took some time to figure out?
 Tell us about it. What did you enjoy, what was less desirable? Feel
 free to add other items (within the two paragraph limit).
 
+I liked this project overall. Since we didn't have any templates or pre-made interfaces, figuring out 
+all the little stuff and what methods I would need based on pseudo code from the book and lectures was challenging but fun. 
+I'm still quite new to Java and Eclipse.  I had to thoroughly read through the project instructions multiple times and look a lot of stuff up, 
+but I feel like I now have an understanding of hash tables that I'll never lose.
+As for the result of the project itself, I feel that I could've done better.  Figuring out how to do insert
+was probably what I spent the most time on, and I still didn't get it to perfectly match the results, but it did give me 
+expected average number of probe results for Random-Numbers and Word-List where double hashing does better on the curve as the loadfactor
+increases.
+
 ## Compiling and Using
 
-This section should tell the user how to compile your code.  It is
-also appropriate to instruct the user how to use your code. Does your
-program require user input? If so, what does your user need to know
-about it to use it as quickly as possible?
-
-Run this program by compiling all of the .java files and then running HashtableExperiment.
+Run this program by compiling all of the .java files and then running HashtableExperiment. 
 
 Usage: java HashtableExperiment <dataSource> <loadFactor> [<debugLevel>]
       <dataSource>: 1 ==> random numbers
+      
                     2 ==> date value as a long
+                    
                     3 ==> word list
+                    
       <loadFactor>: The ratio of objects to table size, 
+      
                       denoted by alpha = n/m
+                      
       <debugLevel>: 0 ==> print summary of experiment
+      
                     1 ==> save the two hash tables to a file at the end
+                    
                     2 ==> print debugging output for each insert
 
 ## Results 
@@ -91,9 +105,13 @@ HashtableExperiment: size of hash table is 91002
 ## Sources used
 
 www.w3schools.com
+
 www.geeksforgeeks.org
+
 www.stackoverflow.com
+
 www.coderanch.com
+
 Google AI Overview
 
 ----------
@@ -102,12 +120,3 @@ Google AI Overview
 
 Latedays used: 1
 
-* This README.md template is using Markdown. Here is some help on using Markdown: 
-[markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
-
-* Markdown can be edited and viewed natively in most IDEs such as Eclipse and VS Code. Just toggle
-between the Markdown source and preview tabs.
-
-* To preview your README.md output online, you can copy your file contents to a Markdown editor/previewer
-such as [https://stackedit.io/editor](https://stackedit.io/editor).
