@@ -54,7 +54,7 @@ public class HashtableExperiment {
         	insertRandomNumbers(linearProbeTable, doubleHashingTable, debugLevel);
         	break;
         case 2:
-        	System.out.println("HashtableExperiment: Input: Date-Value-as-a-Long   Loadfactor: " + df.format(loadFactor));
+        	System.out.println("HashtableExperiment: Input: Data-Value-as-a-Long   Loadfactor: " + df.format(loadFactor));
         	insertDateValueAsALong(linearProbeTable, doubleHashingTable, debugLevel);
         	break;
         case 3:
@@ -139,7 +139,8 @@ public class HashtableExperiment {
 		
 		try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null 
+            		&& linearProbeTable.getElementCount() < linearProbeTable.getMaxLoadFactor()) {
             	HashObject obj = new HashObject(line);
             	linearProbeTable.insert(obj, debugLevel);
     			doubleHashingTable.insert(obj, debugLevel);

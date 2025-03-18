@@ -31,7 +31,7 @@ public class HashObject {
 	
 	@Override
 	public String toString() {
-		return ("Key: " + getKey() + " Frequency:" + frequencyCount + " Probe count:" + probeCount);
+		return getKey() + " " + frequencyCount + " " + probeCount;
 	}
 	
 	public Object getKey() {

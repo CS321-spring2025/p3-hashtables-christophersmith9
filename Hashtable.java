@@ -32,26 +32,29 @@ public abstract class Hashtable {
 		
 		public void insert(HashObject obj, int debugLevel) {
 			int probe = 0;
-			for (int i = 0; i < this.capacity; i++) { 
+			insertCount++;
+			
+			while (true) {
 	            probe = h(obj.getKey(), obj.getProbeCount());
 	            obj.incrementProbeCount();
-	            if (hashTable[probe] != null && hashTable[probe].equals(obj)) { // If object in table
-	            	hashTable[probe].incrementFrequencyCount();
-	            	duplicateCount++;
-	            	
-	            	if (debugLevel == 2) {
-	                    System.out.println("Duplicate: " + obj.toString() + " at index " + probe);
-	                }
-	            	return;
-	            } else if (hashTable[probe] == null) {
+	            
+	            totalProbes++;
+	            if (hashTable[probe] == null) {
 	            	hashTable[probe] = obj;
-	            	insertCount++;
+	            	elementCount++;
 	            	if (debugLevel == 2) {
 	                    System.out.println("Inserted: " + obj.toString() + " at index " + probe);
 	                }
+	            	break;
+	            } else if (hashTable[probe].equals(obj)) { // If object in table
+	            	hashTable[probe].incrementFrequencyCount();
+	            	duplicateCount++;
+	            	if (debugLevel == 2) {
+	                    System.out.println("Duplicate: " + obj.toString() + " at index " + probe);
+	                }
+	            	break;
 				}
 			}
-			return;
 		}
 		
 		public HashObject search(HashObject obj) {
@@ -81,7 +84,7 @@ public abstract class Hashtable {
 	    }
 		
 		public double getAvgProbes() {
-			return (double) totalProbes / elementCount;
+			return (double) totalProbes / insertCount; 
 		}
 		
 		public int getMaxLoadFactor() {
@@ -93,14 +96,13 @@ public abstract class Hashtable {
 			try {
 				out = new PrintWriter(fileName);
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		     // loop through the hash table, and print non-null entries
 		     // using toString() method in the HashObject class
 		     for (int i = 0; i < this.capacity; i++) {
 		    	 if (hashTable[i] != null) {
-		    	 	hashTable[i].toString();
+		    		 out.println("table[" + i + "]: " + hashTable[i].toString());
 		    	 }
 		     }
 		     

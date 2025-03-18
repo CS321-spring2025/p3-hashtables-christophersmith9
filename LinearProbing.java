@@ -11,10 +11,11 @@ public class LinearProbing extends Hashtable {
 		super(capacity, loadFactor);
 	}
 	
-	protected int positiveMod (int dividend, int divisor) {
+	protected int positiveMod(int dividend, int divisor) {
 		int quotient = dividend % divisor;
-		if (quotient < 0)
-		quotient += divisor;
+		if (quotient < 0) {
+			quotient += divisor;
+		}
 		return quotient;
 	}
 
