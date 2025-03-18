@@ -13,16 +13,11 @@ load factor α defined as n/m.
 
 ## Reflection
 
-Write a two paragraph reflection describing your experience with this 
-project.  Talk about what worked well and what was challenging.  
-Did you run into an issue that took some time to figure out?  
-Tell us about it. What did you enjoy, what was less desirable? Feel
-free to add other items (within the two paragraph limit).
-
 I liked this project overall. Since we didn't have any templates or pre-made interfaces, figuring out 
 all the little stuff and what methods I would need based on pseudo code from the book and lectures was challenging but fun. 
 I'm still quite new to Java and Eclipse.  I had to thoroughly read through the project instructions multiple times and look a lot of stuff up, 
 but I feel like I now have an understanding of hash tables that I'll never lose.
+
 As for the result of the project itself, I feel that I could've done better.  Figuring out how to do insert
 was probably what I spent the most time on, and I still didn't get it to perfectly match the results, but it did give me 
 expected average number of probe results for Random-Numbers and Word-List where double hashing does better on the curve as the loadfactor
